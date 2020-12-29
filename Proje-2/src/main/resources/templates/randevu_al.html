@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <title>Diyetisyen Sistemi</title>
+    <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16"><!--Site üst bar iconu -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    -->  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="images/icons/font-awesome-4.7.0/css/font-awesome.min.css"><!--ikonlar için-->    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"><!--slider için-->
+    <link href="css/ok.css" rel="stylesheet" type="text/css" /> <!--site için gerekli css dosyası-->
+
+    <script src="js/myScript.js"></script><!--Ekran küçüldüğünde üç çizgi ikonu çıkar-->
+    <script src="js/jquery-1.12.2.min.js"></script>    
+    <script src="js/myScript1.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!--slider için-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script><!--slider için-->
+
+
+    <link href="js/jquery.datetimepicker.min.css" rel="stylesheet">    
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
+
+    <body class="ok-light-grey ok-content">
+        
+        <!-- Sidenav/menu -->
+        <nav id="mySidenav" class="ok-sidenav ok-collapse ok-white ok-animate-left"><br>
+            <div class="ok-container">
+                <img src="images/logo.png" class="ok-round logo-buyuk">
+                <h3 class="baslik"><b>DİYETİSYEN</b></h3>
+                <h3 class="alt_baslik ok-text-teal">Randevu Sistemi</h3>
+                <a href="#" onclick="ok_close()" class="ok-hide-large ok-right ok-large ok-padding" title="close menu">
+                    <i class="fa fa-remove"></i>
+                </a>
+            </div>
+
+            <div id="sosyal_medya">
+                <a href="https://www.facebook.com/ozgur.kan.7" target="_blank" class="ok-hover-white ok-hover-text-indigo ok-show-inline-block"><i class="fa fa-facebook fa-2x"></i></a>
+                <a href="https://www.instagram.com/kan_ozgur/"  target="_blank" class="ok-hover-white ok-hover-text-purple ok-show-inline-block"><i class="fa fa-instagram fa-2x"></i></a>
+                <a href="https://www.snapchat.com/add/ozgur_kan" target="_blank" class="ok-hover-white ok-hover-text-yellow ok-show-inline-block"><i class="fa fa-snapchat fa-2x"></i></a>
+                <a href="mailto:galatasaray_ozgur_94@hotmail.com" target="_blank" class="ok-hover-white ok-hover-text-blue ok-show-inline-block"><i class="fa fa-envelope fa-2x"></i></a>        
+                <a href="https://www.linkedin.com/in/ozgurkan/" target="_blank" class="ok-hover-white ok-hover-text-indigo ok-show-inline-block"><i class="fa fa-linkedin fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/ozgurkan/" target="_blank" class="ok-hover-white ok-hover-text-red ok-show-inline-block"><i class="fa fa-youtube fa-2x"></i></a>
+            </div>
+            <div style="clear: both"></div>
+
+            <a th:href="@{/index2}" onclick="ok_close()" class="ok-hover-teal ok-hover-opacity ok-padding navigasyon-text"><i class="fa fa-home fa-fw ok-margin-right"></i>ANASAYFA</a>
+            <a th:href="@{/hakkimda2}" onclick="ok_close()" class="ok-hover-teal ok-hover-opacity ok-padding navigasyon-text"><i class="fa fa-id-card fa-fw ok-margin-right"></i>HAKKIMIZDA</a>
+            
+            
+            <div id="sol_alt" style="margin-top: 20px;width:270px;height: auto;margin-left: 8px;">
+                <h1>ÜYE İŞLEMLERİ</h1>
+                <ul>           
+                    <li><a th:href="@{/uyebilgi}" onclick="ok_close()" class="ok-padding"><h4><i class="fa fa-user fa-fw ok-margin-right"></i>ÜYE BİLGİLERİ</h4></a></li>
+                    <li><a th:href="@{/randevual}" onclick="ok_close()" class="ok-padding ok-text-teal"><h4><i class="fa fa-calendar fa-fw ok-margin-right"></i>RANDEVU AL</h4></a></li>
+                    <li><a th:href="@{/uye_randevular}" onclick="ok_close()" class="ok-padding"><h4><i class="fa fa-calendar fa-fw ok-margin-right"></i>RANDEVULARIMI KONTROL ET</h4></a></li>    
+                    <li><a th:href="@{/uye_diyetlist}" onclick="ok_close()" class="ok-padding"><h4><i class="fa fa-list-alt fa-fw ok-margin-right"></i>DİYET PROGRAMIM</h4></a></li>
+                    <li><a th:href="@{/}" onclick="ok_close()" class="ok-padding"><h4><i class="fa fa-sign-out fa-fw ok-margin-right"></i>ÜYE ÇIKIŞ</h4></a></li>
+                    
+                </ul>
+            </div>
+        
+        </nav>
+
+        <!-- Overlay effect when opening sidenav on small screens-->
+        <div id="myOverlay" class="ok-overlay ok-hide-large ok-animate-opacity" onclick="ok_close()" style="cursor:pointer" title="yan menüyü kapat" ></div>
+            
+        </div>
+        
+        <!-- PAGE CONTENT -->
+        <div class="ok-main">
+            <!-- Header -->
+            <header id="portfolio" class="ok-container" >
+                <img src="images/logo.png" class="logo-kucuk ok-circle ok-right ok-margin ok-hide-large ok-hover-opacity">
+                <span class="ok-opennav ok-hide-large ok-xxlarge ok-hover-text-grey" onclick="ok_open()"><i class="fa fa-bars"></i></span>
+
+                <h3><i class="fa fa-hashtag ok-margin-right"></i><b>EvdeKal veya Slogan Yazısı gibi bişey eklenebilir.</b></h3>
+                <div class="ok-section ok-bottombar ok-padding-16">
+                
+                </div>
+            </header>
+                
+           <!-- First Photo Grid-->
+        <div class="ok-row-padding">           
+            <div id="gecis1" class="ok-col s12  m6 ok-container ok-margin-bottom">
+                <h2 class="ok-pink" style="text-align:center;"><b>EDA GÜREL</b></h2>
+                <div class="ok-container ok-white ok-hover-pink ok-hover-opacity">                                      
+                    <img src="images//kadın.png" style="width:60%; height:500px;margin-left:70px;cursor: pointer">
+                </div>
+            </div>
+
+            
+
+            <div id="gecis2" class="ok-col s12  m6 ok-container ok-margin-bottom">
+                <h2 class="ok-blue" style="text-align:center"><b>AHMET YERLİ</b></h2> 
+                <div class="ok-container ok-white ok-hover-blue ok-hover-opacity">                                     
+                    <img src="images//erkek.png" style="width:60%; height:500px;margin-left: 70px;cursor: pointer">
+                </div>
+            </div>
+
+            <div id="orta_alan" class="ok-col s12  m12 ok-container ok-margin-bottom" style="display: none;background-color: red;height: 0px; transition: all 3s ease-in-out 0s;">
+                <!--ORTA ALAN SOL-->
+               <form method="post" th:action="@{/process_randevu}" th:object="${randevuymodel}" id="randevu_form" style="height: 0px;;visibility: hidden;padding-top: 100px;padding-left: 2%;">
+                <table class="thead-dark">
+					  <thead>
+					    <tr>					      
+					      <th scope="col"><h2>Randevu Seçimi</h2></th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>	
+					      <td>
+					      	<div class="form-group row">
+                        		<h3>Diyetisyen Seçimi:</h3>                   
+								<input style="margin-left:68px;height: 30px;font-size: 15px;font-weight: bold;" type="text" th:field="*{dname}" id="doktor_adi1" readonly>                    
+                    		</div>    
+					      </td>					      
+					    </tr>
+					    <tr>
+					      <td>
+					      	<div class="form-group row">
+                            	<label for="tarih" style="font-weight: bold;font-size: 16px;">
+                            	<h3>Tarih ve Saat Seçiniz:<i class="fa fa-calendar fa-fw fa-x"></i> </h3>                         	
+								</label>
+                            	<input for="tarih" type="text"  th:field="*{date}" name="tarih" id="tarih" style="height: 30px;font-size: 15px;font-weight: bold;" autocomplete="off"/>
+                    		</div> 
+					      </td>					      
+					    </tr>
+					     <tr>					      
+					      <td>
+					      	<div>
+                            	<input style="margin-left:330px" type="submit" class="btn btn-primary" value="Randevu al"/>
+                    		</div>      
+					      </td>					      
+					    </tr>
+					  </tbody>
+					</table>
+                </form>               
+            </div>
+        </div>    
+            <!-- Footer -->
+            <footer class="ok-container ok-center ok-padding-16 ok-dark-grey">
+                
+                <!--Google map-->
+                <div class="ok-col s12  m12">
+                    <div class="ok-col  m8">
+                        <iframe class="ok-col s12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4016.274034090709!2d29.008654098177363!3d41.051373014070364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7afd662296b%3A0x838c088492dac437!2zWcSxbGTEsXogVGVrbmlrIMOcbml2ZXJzaXRlc2k!5e0!3m2!1str!2str!4v1605357383633!5m2!1str!2str" height="260px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                    <div class="ok-col m4">
+                        <h3 style="font-weight: bold;padding-left: 50px;">İletişim Bilgileri</h3>
+                        <ul style="list-style: none;font-size: 15px;font-weight: bold;">
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                ADRES <br>Yıldız Teknik Üniversitesi, Merkez Yerleşim, A Blok, D:210, 34349 Beşiktaş/İstanbul                                
+                            </li>
+                            <li>
+                                <br><i class="fa fa-phone" aria-hidden="true"></i>
+                                TELEFON<br>+90 212 236 85 70                           
+                            </li>
+                            <li>
+                                <br><i class="fa fa-envelope" aria-hidden="true" ></i> 
+                                E-POSTA<br> yildizteknikuniversitesi@hs01.kep.tr
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ok-col m12">
+                        Powered by:DİYETİSYEN 2020
+                    </div>                    
+                </div>                
+            </footer>
+            <!-- End page content -->      
+        </div>
+        <script>
+            $(document).ready(function () {
+                    'use strict';
+                    var currentTime = new Date();
+                    var minDate = new Date(currentTime.getFullYear(), currentTime.getMonth(), 1);
+                    var maxDate =  new Date(currentTime.getFullYear(), currentTime.getMonth() + 1, 0);
+                    $.datetimepicker.setLocale('tr');
+                        $('#tarih').datetimepicker({
+                            format:'d.m.Y H:i',                                                       
+                            minDate: 0,                 
+                            maxDate: maxDate ,                
+                            dayOfWeekStart: 1,                  
+                            disabledWeekDays:[0, 6],                            
+                            allowTimes:['10:00', '11:00', '12:00','14:00', '15:00', '16:00', '17:00', '18:00']
+                        });        
+                    });
+                
+        </script>        
+    </body>
+</html>

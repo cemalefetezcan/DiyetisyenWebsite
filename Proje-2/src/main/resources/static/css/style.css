@@ -1,0 +1,21 @@
+@import "normalize.css";
+body{
+font-family:'Alegrea Sans' ,sans-serif;
+    font-size: 16px;
+    color: white;
+    cursor: default;
+}
+a{text-decoration: none;color: white;transition: all .2s ease-in-out}
+a:hover{text-decoration: underline;}
+
+@media only screen and (min-width: 960px){
+    #container {width: 100%;height: auto;}
+    .panel_left{background-color:#F8F9F8;width:20%;height:100%;top:0;left:0;position:fixed;border-right:solid 5px #fc5b62;float:left}
+    .logo{width:50%;height:auto;float:left;text-align:left;color: black;float: left;display: block}
+    .logo img{outline:none;padding: 10px;float: left}
+
+    .panel_center{background: #608bff;width:70%;height:1500px;float:left;position:relative;margin-left:20.34%;top:0}
+    .panel_right{background: #ffa778;width:9.62%;height:1500px;position:relative;margin-left:90.35%;top:0}
+
+}
+
